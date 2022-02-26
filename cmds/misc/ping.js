@@ -5,6 +5,6 @@ module.exports = {
 	args: false,
 	cooldown: 1,
 	execute(message, args, prefix) {
-		message.channel.createMessage('Pong!');
+		message.channel.send('Pong!');
 	},
 };

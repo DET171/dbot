@@ -28,8 +28,8 @@ bot.on('ready', () => {
 });
 
 bot.on('messageCreate', (message) => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
-
+	if (!message.content.startsWith(prefix) || message.author.bot || !message.guildID) return;
+	message.channel.send = message.channel.createMessage;
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const commandName = args.shift().toLowerCase();
 

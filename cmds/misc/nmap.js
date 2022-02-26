@@ -10,7 +10,7 @@ module.exports = {
 	async execute(message, args, prefix) {
 		let scan = new nmap.NmapScan(args);
 		scan.on('complete', (data) => {
-			message.channel.createMessage('Output:', {
+			message.channel.send('Output:', {
 				name: 'output.json',
 				file: JSON.stringify(data),
 			});
